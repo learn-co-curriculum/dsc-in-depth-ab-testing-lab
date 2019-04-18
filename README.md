@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this lab, you'll explore a survey from Kaggle regarding budding data scientists. With this you'll form some initial hypotheses, and test them using the tools you've acquired to date. 
+In this lab, you'll explore a survey from Kaggle regarding budding data scientists. With this, you'll form some initial hypotheses, and test them using the tools you've acquired to date. 
 
 ## Objectives
 
