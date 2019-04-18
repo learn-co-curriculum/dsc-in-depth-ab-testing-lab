@@ -1,5 +1,5 @@
 
-# In Depth A/B Testing
+# In Depth A/B Testing - Lab
 
 ## Introduction
 
@@ -14,7 +14,7 @@ You will be able to:
 
 The data is stored in a file called **multipleChoiceResponses_cleaned.csv**. Feel free to check out the original dataset referenced at the bottom of this lab, although this cleaned version will undoubtedly be easier to work with. Additionally, meta-data regarding the questions is stored in a file name **schema.csv**. Load in the data itself as a Pandas DataFrame, and take a moment to briefly get acquainted with it.
 
-> Note: If you can't get the file to load properly, try chaging the encoding format as in `encoding='latin1'`
+> Note: If you can't get the file to load properly, try changing the encoding format as in `encoding='latin1'`
 
 
 ```python
@@ -24,6 +24,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('darkgrid')
 %matplotlib inline
+
+import warnings
+warnings.filterwarnings("ignore")
 ```
 
 
@@ -248,7 +251,7 @@ sns.distplot(s2)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x104835438>
+    <matplotlib.axes._subplots.AxesSubplot at 0x109bbd518>
 
 
 
@@ -334,7 +337,7 @@ sns.distplot(s2)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1052522b0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a10772a58>
 
 
 
@@ -417,63 +420,6 @@ print(table)
     C(FormalEducation)  5.841881e+11     6.0  29.224224  1.727132e-34
     Residual            1.439270e+13  4320.0        NaN           NaN
 
-
-
-```python
-temp = pd.get_dummies(df[df[f2]<=5*10**5][[f1,f2]])
-def clean_col(col):
-    to_replace = {' ':'_', "/":"_", "'":""}
-    for k, v in to_replace.items():
-        col = col.replace(k, v)
-    return col
-temp.columns = [clean_col(col) for col in temp.columns]
-partial_formula = ' + '.join(temp.columns[1:])
-formula = '{} ~ {}'.format(f2, partial_formula)
-lm = ols(formula, temp).fit()
-table = sm.stats.anova_lm(lm, typ=2)
-print(table)
-```
-
-                                                              sum_sq      df  \
-    FormalEducation_Bachelors_degree                    3.491194e+07     1.0   
-    FormalEducation_Doctoral_degree                     1.470114e+09     1.0   
-    FormalEducation_I_did_not_complete_any_formal_e...  1.276442e+08     1.0   
-    FormalEducation_I_prefer_not_to_answer              1.081397e+09     1.0   
-    FormalEducation_Masters_degree                      2.604844e+08     1.0   
-    FormalEducation_Professional_degree                 7.049869e+07     1.0   
-    FormalEducation_Some_college_university_study_w...  1.957883e+08     1.0   
-    Residual                                            1.439270e+13  4320.0   
-    
-                                                               F    PR(>F)  
-    FormalEducation_Bachelors_degree                    0.010479  0.918471  
-    FormalEducation_Doctoral_degree                     0.441258  0.506551  
-    FormalEducation_I_did_not_complete_any_formal_e...  0.038313  0.844826  
-    FormalEducation_I_prefer_not_to_answer              0.324584  0.568896  
-    FormalEducation_Masters_degree                      0.078185  0.779786  
-    FormalEducation_Professional_degree                 0.021160  0.884350  
-    FormalEducation_Some_college_university_study_w...  0.058766  0.808468  
-    Residual                                                 NaN       NaN  
-
-
-
-```python
-for col in temp.columns[1:]:
-    sns.distplot(temp[temp[col]==1]['AdjustedCompensation'], label=col)
-plt.legend(loc=(1,.6))
-```
-
-
-
-
-    <matplotlib.legend.Legend at 0x1051984e0>
-
-
-
-
-![png](index_files/index_20_1.png)
-
-
-> Comment: Again, notice the alternative conclusions based on the problem formulation, even using the same statistical test. 
 
 ## Additional Resources
 
