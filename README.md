@@ -8,7 +8,7 @@ In this lab, you'll explore a survey from Kaggle regarding budding data scientis
 ## Objectives
 
 You will be able to:
-* Conduct statistical tests on a real world dataset
+* Conduct statistical tests on a real-world dataset
 
 ## Load the Dataset and Perform a Brief Exploration
 
@@ -24,9 +24,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('darkgrid')
 %matplotlib inline
-
-import warnings
-warnings.filterwarnings("ignore")
 ```
 
 
@@ -251,7 +248,7 @@ sns.distplot(s2)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x110d6b320>
+    <matplotlib.axes._subplots.AxesSubplot at 0x104835438>
 
 
 
@@ -337,7 +334,7 @@ sns.distplot(s2)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x11701c940>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1052522b0>
 
 
 
@@ -345,11 +342,11 @@ sns.distplot(s2)
 ![png](index_files/index_12_1.png)
 
 
-> Comment: The exploration above should demonstrate the importance of preprocessing and thoughtful interpretation. Notice how drastically the p-value and your subsequent conclusions 
+> Comment: The exploration above should demonstrate the importance of preprocessing and thoughtful interpretation. Notice how drastically the p-value and your subsequent conclusions differ.
 
 ## Wages and Education II
 
-Now perform a similar statistical test comparing the AdjustedCompensation of those with Bachelor's degrees and those with Doctorates.
+Now perform a similar statistical test comparing the AdjustedCompensation of those with Bachelor's degrees and those with Doctorates. If you haven't already, be sure to explore the distribution of the AdjustedCompensation feature for any anomalies.
 
 
 ```python
@@ -388,7 +385,7 @@ print("Welch's t-test p-value with outliers removed:", fs.p_value_welch_ttest(s1
 
 ## Wages and Education III
 
-Remember the multiple comparisons problem; rather then continuing on like this, perform an ANOVA test between the various 'FormalEducation' categories and their relation to 'AdjustedCompensation'.
+Remember the multiple comparisons problem; rather than continuing on like this, perform an ANOVA test between the various 'FormalEducation' categories and their relation to 'AdjustedCompensation'.
 
 
 ```python
@@ -468,7 +465,7 @@ plt.legend(loc=(1,.6))
 
 
 
-    <matplotlib.legend.Legend at 0x1a1c18b048>
+    <matplotlib.legend.Legend at 0x1051984e0>
 
 
 
