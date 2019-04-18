@@ -1,5 +1,5 @@
 
-# In Depth A/B Testing
+# In Depth A/B Testing - Lab
 
 ## Introduction
 
@@ -14,7 +14,7 @@ You will be able to:
 
 The data is stored in a file called **multipleChoiceResponses_cleaned.csv**. Feel free to check out the original dataset referenced at the bottom of this lab, although this cleaned version will undoubtedly be easier to work with. Additionally, meta-data regarding the questions is stored in a file name **schema.csv**. Load in the data itself as a Pandas DataFrame, and take a moment to briefly get acquainted with it.
 
-> Note: If you can't get the file to load properly, try chaging the encoding format as in `encoding='latin1'`
+> Note: If you can't get the file to load properly, try changing the encoding format as in `encoding='latin1'`
 
 
 ```python
