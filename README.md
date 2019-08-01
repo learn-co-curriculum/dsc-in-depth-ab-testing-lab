@@ -35,12 +35,6 @@ import warnings
 warnings.filterwarnings("ignore")
 ```
 
-## Wages and Education
-
-You've been asked to determine whether education is impactful to salary. Develop a hypothesis test to compare the salaries of those with Master's degrees to those with Bachelor's degrees. Are the two statistically different according to your results?
-
-> Note: The relevant features are stored in the 'FormalEducation' and 'AdjustedCompensation' features.
-
 
 ```python
 # __SOLUTION__ 
@@ -222,11 +216,6 @@ df.head()
 
 
 ```python
-#Your code here
-```
-
-
-```python
 # __SOLUTION__ 
 df.info()
 ```
@@ -238,40 +227,22 @@ df.info()
     memory usage: 46.3+ MB
 
 
-## Wages and Education II
+## Wages and Education
 
-Now perform a similar statistical test comparing the AdjustedCompensation of those with Bachelor's degrees and those with Doctorates. If you haven't already, be sure to explore the distribution of the AdjustedCompensation feature for any anomalies. 
+You've been asked to determine whether education is impactful to salary. Develop a hypothesis test to compare the salaries of those with Master's degrees to those with Bachelor's degrees. Are the two statistically different according to your results?
+
+> Note: The relevant features are stored in the 'FormalEducation' and 'AdjustedCompensation' features.
 
 
 ```python
 #Your code here
 ```
 
-    Median Values: 
-    s1:74131.92 
-    s2:38399.4
-    Sample sizes: 
-    s1: 967 
-    s2: 1107
-    Welch's t-test p-value: 0.1568238199472023
-    
-    
-    Repeated Test with Ouliers Removed:
-    Sample sizes: 
-    s1: 964 
-    s2: 1103
-    Welch's t-test p-value with outliers removed: 0.0
-
-
 
 ```python
 # __SOLUTION__ 
 import flatiron_stats as fs
 ```
-
-## Wages and Education III
-
-Remember the multiple comparisons problem; rather than continuing on like this, perform an ANOVA test between the various 'FormalEducation' categories and their relation to 'AdjustedCompensation'.
 
 
 ```python
@@ -284,11 +255,6 @@ f1c2 = "Bachelor's degree"
 subset = df[(~df[f1].isnull()) & (~df[f2].isnull())]
 s1 = subset[subset[f1]==f1c1][f2]
 s2 = subset[subset[f1]==f1c2][f2]
-```
-
-
-```python
-#Your code here
 ```
 
 
@@ -306,13 +272,8 @@ sns.distplot(s2)
 
 
 
-![png](index_files/index_14_1.png)
+![png](index_files/index_10_1.png)
 
-
-## Additional Resources
-
-Here's the original source where the data was taken from:  
-    [Kaggle Machine Learning & Data Science Survey 2017](https://www.kaggle.com/kaggle/kaggle-survey-2017)
 
 
 ```python
@@ -330,10 +291,6 @@ print("Welch's t-test p-value:", fs.p_value_welch_ttest(s1, s2))
     Sample sizes: 	s1: 1990 	s2: 1107
     Welch's t-test p-value: 0.33077639451272267
 
-
-## Summary
-
-In this lab, you practiced conducting actual hypothesis tests on actual data. From this, you saw how dependent results can be on the initial problem formulation, including preprocessing!
 
 
 ```python
@@ -405,7 +362,32 @@ sns.distplot(s2)
 
 
 
-![png](index_files/index_20_1.png)
+![png](index_files/index_14_1.png)
+
+
+## Wages and Education II
+
+Now perform a similar statistical test comparing the AdjustedCompensation of those with Bachelor's degrees and those with Doctorates. If you haven't already, be sure to explore the distribution of the AdjustedCompensation feature for any anomalies. 
+
+
+```python
+#Your code here
+```
+
+    Median Values: 
+    s1:74131.92 
+    s2:38399.4
+    Sample sizes: 
+    s1: 967 
+    s2: 1107
+    Welch's t-test p-value: 0.1568238199472023
+    
+    
+    Repeated Test with Ouliers Removed:
+    Sample sizes: 
+    s1: 964 
+    s2: 1103
+    Welch's t-test p-value with outliers removed: 0.0
 
 
 
@@ -444,6 +426,15 @@ print("Welch's t-test p-value with outliers removed:", fs.p_value_welch_ttest(s1
     Welch's t-test p-value with outliers removed: 0.0
 
 
+## Wages and Education III
+
+Remember the multiple comparisons problem; rather than continuing on like this, perform an ANOVA test between the various 'FormalEducation' categories and their relation to 'AdjustedCompensation'.
+
+
+```python
+#Your code here
+```
+
 
 ```python
 # __SOLUTION__ 
@@ -476,3 +467,12 @@ print(table)
     C(FormalEducation)  5.841881e+11     6.0  29.224224  1.727132e-34
     Residual            1.439270e+13  4320.0        NaN           NaN
 
+
+## Additional Resources
+
+Here's the original source where the data was taken from:  
+    [Kaggle Machine Learning & Data Science Survey 2017](https://www.kaggle.com/kaggle/kaggle-survey-2017)
+
+## Summary
+
+In this lab, you practiced conducting actual hypothesis tests on actual data. From this, you saw how dependent results can be on the initial problem formulation, including preprocessing!
