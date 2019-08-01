@@ -345,11 +345,9 @@ sns.distplot(s2)
 ![png](index_files/index_12_1.png)
 
 
-> Comment: The exploration above should demonstrate the importance of preprocessing and thoughtful interpretation. Notice how drastically the p-value and your subsequent conclusions differ.
-
 ## Wages and Education II
 
-Now perform a similar statistical test comparing the AdjustedCompensation of those with Bachelor's degrees and those with Doctorates. If you haven't already, be sure to explore the distribution of the AdjustedCompensation feature for any anomalies.
+Now perform a similar statistical test comparing the AdjustedCompensation of those with Bachelor's degrees and those with Doctorates. If you haven't already, be sure to explore the distribution of the AdjustedCompensation feature for any anomalies. 
 
 
 ```python
