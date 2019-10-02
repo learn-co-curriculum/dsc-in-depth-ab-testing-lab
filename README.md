@@ -328,7 +328,7 @@ for q in np.linspace(.8, 1, num=21):
 
 ```python
 # __SOLUTION__ 
-print('Repeated Test with Ouliers Removed:')
+print('Repeated Test with Outliers Removed:')
 print('S1: {}\tS2: {}'.format(f1c1, f1c2))
 outlier_threshold = 500000
 s1 = subset[(subset[f1]==f1c1) & (subset[f2]<=outlier_threshold)][f2]
