@@ -233,6 +233,10 @@ You've been asked to determine whether education is impactful to salary. Develop
 
 > Note: The relevant features are stored in the 'FormalEducation' and 'AdjustedCompensation' features.
 
+You may import the functions stored in the `flatiron_stats.py` file to help perform your hypothesis tests. It contains the stats functions that you previously coded: `welch_t(a,b)`, `welch_df(a, b)`, and `p_value(a, b, two_sided=False)`. 
+
+Note that `scipy.stats.ttest_ind(a, b, equal_var=False)` performs a two-sided Welch's t-test and that p-values derived from two-sided tests are 2x the p-values derived from one-sided tests. See the [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html) for more information.    
+
 
 ```python
 #Your code here
