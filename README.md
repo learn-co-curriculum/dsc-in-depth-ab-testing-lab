@@ -1,4 +1,3 @@
-
 # In Depth A/B Testing - Lab
 
 ## Introduction
@@ -8,6 +7,7 @@ In this lab, you'll explore a survey from Kaggle regarding budding data scientis
 ## Objectives
 
 You will be able to:
+
 * Conduct t-tests and an ANOVA on a real-world dataset and interpret the results
 
 ## Load the Dataset and Perform a Brief Exploration
@@ -260,7 +260,9 @@ sns.distplot(s2)
 
 
 
+    
 ![png](index_files/index_8_1.png)
+    
 
 
 
@@ -346,7 +348,9 @@ sns.distplot(s2)
 
 
 
+    
 ![png](index_files/index_12_1.png)
+    
 
 
 ## Wages and Education II
